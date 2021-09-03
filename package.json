@@ -1,0 +1,20 @@
+{
+  "name": "teste-watson",
+  "version": "1.0.0",
+  "description": "Teste técnico para vaga de emprego como Desenvolvedor de Assistentes Virtuais na empresa D1 - Smarkio, com o objetivo de cadastrar comentários de usuários em um banco de dados utilizando node.js e MySql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Guilherme Oliveira <guilherme.cardoso-oliveira@unesp.br>",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
