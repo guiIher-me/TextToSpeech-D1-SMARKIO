@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
 	<main class="container">
 		<section class="section--form-comment">
 			<form class="form-comment">
@@ -23,38 +24,18 @@
 			<div class="list-comments">
 				<h2 class="section-title">Comentários</h2>
  				
+ 				<% for(var i=0; i < comments.length; i++) { %>
  				<div class="comment-item">
  					<div class="comment-box-text">
- 						<span class="comment-text">
-						Num ninho de mafagafos há sete mafagafinhos. Quando a mafagafa gafa, gafam os setes mafagafinhos</span>
+ 						<span class="comment-text"><%= comments[i].comment %></span>
  					</div>
 
  					<div class="comment-box-button">
  						<button type="button" class="btn comment-listen">Ouvir</button>
  					</div>
  				</div>
-
- 				<div class="comment-item">
- 					<div class="comment-box-text">
- 						<span class="comment-text">
-						O rato roeu a rica roupa do Rei de roma, a rainha raivosa rasgou o resto e depois resolveu remendar.</span>
-					</div>
-
-					<div class="comment-box-button">
-						<button type="button" class="btn comment-listen">Ouvir</button>
-					</div>
- 				</div>
-
- 				<div class="comment-item">
- 					<div class="comment-box-text">
- 						<span class="comment-text">
-						Trazei três pratos de trigo para três tigres tristes comerem!</span>
-					</div>
-						
-					<div class="comment-box-button">
-						<button type="button" class="btn comment-listen">Ouvir</button>
-					</div>
- 				</div>
+ 				<% } %>
+ 				
 			</div>
 		</section>
 	</main>

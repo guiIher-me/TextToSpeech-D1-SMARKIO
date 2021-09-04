@@ -1,5 +1,5 @@
 require('dotenv/config');
-var app = require('./config/server');
+var app = require('./app/config/server');
 var route_comments = require('./app/routes/comments')(app);
 
 

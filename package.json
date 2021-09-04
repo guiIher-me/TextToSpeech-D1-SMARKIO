@@ -9,6 +9,7 @@
   "author": "Guilherme Oliveira <guilherme.cardoso-oliveira@unesp.br>",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
