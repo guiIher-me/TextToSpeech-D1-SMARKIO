@@ -1,13 +1,8 @@
-const express = require('express');
-const app = express();
-
-app.set('view engine', 'ejs');
-
-app.get('/', function(req, res) {
-	res.render("index");
-});
+require('dotenv/config');
+var app = require('./config/server');
+var route_comments = require('./app/routes/comments')(app);
 
 
 app.listen(3000, function() {
-	console.log("servidor rodando com express")
+	console.log("localhost:3000")
 });

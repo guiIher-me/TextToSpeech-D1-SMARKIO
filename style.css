@@ -1,0 +1,139 @@
+/* Author : Guilherme Cardoso <guilherme.cardoso-oliveira@unesp.br>
+ * Date   : 2021-09-03
+ * License: MIT
+ */
+
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap');
+
+
+/* VARS */
+:root {
+  --primary: #007bff;
+  --primary-dark: #0062cc;
+  --on-primary: #ffffff;
+}
+
+
+/* REBASE */
+html, body, div, section, input, span, button, h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+body {
+	background-color: #f5f5f5;
+	line-height: 1;
+	font-family: Roboto;
+}
+
+.section-title {
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+
+/* FORMS */
+form {
+	padding: 0 20px 20px;
+}
+
+textarea {
+	resize: none;
+	width:  100%;
+	min-height:  150px;
+}
+
+.btn {
+	border: 1px solid rgba(0,0,0,0.2);
+	text-align: center;
+	padding: 6px 20px;
+	margin: 5px;
+	border-radius: .2rem;
+	background-color: var(--primary);
+	color: var(--on-primary);
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: var(--primary-dark);
+	transition: .2s ease-in;
+}
+
+.btn:active {
+	transform: translateY(2px);
+}
+
+.btn-block {
+	display: block;
+    width: 100%;
+}
+
+
+/* GRID */
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	width: 100%;
+	padding:  20px;
+	box-sizing: border-box;
+}
+
+.section--form-comment,
+.section--list-comments {
+	display: block;
+	width: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+	.section--form-comment,
+	.section--form-comment {
+		width: 100%;
+	}
+}
+
+
+/* COMMENT FORM */
+form.form-comment {
+	max-width: 400px;
+	left:  0;
+	right: 0;
+	margin: 0 auto;
+}
+
+
+/* LIST OF COMMENTS */
+.list-comments {
+	left:  0;
+	right: 0;
+	margin: 0 auto;
+}
+
+.comment-item {
+	display: table;
+	width: 100%;
+	padding: 15px 0;
+	box-sizing: border-box;
+}
+
+.comment-box-text {
+	padding: 0 10px;
+}
+
+.comment-box-text span.comment-text {
+	width: 100%;
+	word-wrap:break-word;
+}
+
+.comment-box-text,
+.comment-box-button {
+	display: table-cell;
+}
+
+.comment-box-text {
+	width:  80%;
+}
