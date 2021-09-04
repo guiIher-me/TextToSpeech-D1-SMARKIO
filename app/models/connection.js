@@ -13,13 +13,18 @@ sequelize.authenticate().then(function() {
 	console.log('Erro' + err);
 });
 
-//cria a tabela, apaga antes se necessário:
-//Comment.sync({force: true});
-
 const DB = {};
 
 //Models
 DB.Comments = require("../models/comments.model.js")(sequelize, Sequelize.DataTypes);
+
+//cria a tabela, apaga antes se necessário:
+//DB.Comments.sync({force: true});
+
+/*DB.Comments.create({comment: 'Num ninho de mafagafos há sete mafagafinhos. Quando a mafagafa gafa, gafam os setes mafagafinhos'});
+DB.Comments.create({comment: 'O rato roeu a rica roupa do Rei de roma, a rainha raivosa rasgou o resto e depois resolveu remendar'});
+DB.Comments.create({comment: 'Trazei três pratos de trigo para três tigres tristes comerem!'});
+*/
 
 DB.Sequelize = Sequelize;
 DB.sequelize = sequelize;

@@ -1,8 +1,7 @@
-require('dotenv/config');
+require('dotenv').config();
 var app = require('./app/config/server');
 var route_comments = require('./app/routes/comments')(app);
 
-
-app.listen(3000, function() {
-	console.log("localhost:3000")
+app.listen(process.env.SERVER_PORT, function() {
+	console.log("localhost:" + process.env.SERVER_PORT);
 });

@@ -2,7 +2,11 @@ const DB = require('../models/connection');
 
 module.exports = {
 
-	async show(req, res) {
+	async home(req, res) {
+		res.render('index');
+	},
+
+	async getAll(req, res) {
 		let comments;
 		try {
 			comments = await DB.Comments.findAll();
@@ -10,7 +14,7 @@ module.exports = {
 			console.log("Erro ao consultar dados");
 		}
 
-		res.render('index', {comments});
+		return res.status(200).json(comments);
 	}
 
 }

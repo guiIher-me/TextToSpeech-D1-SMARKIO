@@ -60,11 +60,11 @@ textarea {
 
 .btn:hover {
 	background-color: var(--primary-dark);
-	transition: .2s ease-in;
+	transition: background-color .2s ease-in;
 }
 
 .btn:active {
-	transform: translateY(2px);
+	transform: translateY(1px);
 }
 
 .btn-block {
@@ -107,7 +107,7 @@ form.form-comment {
 
 
 /* LIST OF COMMENTS */
-.list-comments {
+#list-comments {
 	left:  0;
 	right: 0;
 	margin: 0 auto;
