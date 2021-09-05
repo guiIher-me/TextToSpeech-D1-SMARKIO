@@ -12,7 +12,7 @@ module.exports = {
 		try {
 			comments = await DB.Comments.findAll({order: [['createdAt', 'DESC']]});
 		} catch {
-			console.log("Erro ao consultar dados");
+			return res.status(400).json({ error: 'Erro ao consultar dados' });
 		}
 
 		return res.status(200).json(comments);

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const TextToSpeechV1 = require('ibm-watson/text-to-speech/v1');
@@ -5,8 +6,8 @@ const TextToSpeechV1 = require('ibm-watson/text-to-speech/v1');
 module.exports = {
     async getAudio(text) {
     	const cred = {
-			"apikey": "t4s6tzz4932Lw-BjK3tLUD-nV8KuH2IJdXzkZOhoed8g",
-			"url": "https://api.au-syd.text-to-speech.watson.cloud.ibm.com/instances/5469c507-a898-4bc0-a5f5-337c18158f1f"
+			"apikey": process.env.IBM_TTS_APIKEY,
+			"url": process.env.IBM_TTS_URL
 		}
 
     	const TextToSpeechV1 = require('ibm-watson/text-to-speech/v1');
@@ -25,7 +26,6 @@ module.exports = {
             accept: 'audio/wav'
         };
 
-        let result = null;
 		await textToSpeech.synthesize(parameters)
 			.then(response => {
 				return textToSpeech.repairWavHeaderStream(response.result);
@@ -38,7 +38,7 @@ module.exports = {
 				console.log('error:', err);
 			});
 
-		return result;
+		return null;
 	}
 
 };
