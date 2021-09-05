@@ -62,7 +62,7 @@ Para executar este projeto, siga os passos descritos abaixo:
 npm install
 ```
 <li>Inicialize e selecione um novo banco de dados MySQL em sua máquina utilizando suas credenciais de usuário e senha. Este banco de dados deverá ser utilizado durante a execução do projeto;</li>
-<li>Acesse novamente o diretório raiz/principal do projeto e abra o arquivo `.env.example`, aqui estão exemplos de valores para as variáveis de ambiente do sistema: </li>
+<li>Acesse novamente o diretório raiz/principal do projeto e abra o arquivo `.env.example`, aqui estão exemplos de valores para as variáveis de ambiente do sistema, modifique-os conforme sua configuração: </li>
 
 ```
 #Selecione a porta na qual o servidor Node.js será executado
