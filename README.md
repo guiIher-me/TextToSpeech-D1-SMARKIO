@@ -16,7 +16,7 @@
 Desenvolver uma aplicação web em Node.js com banco de dados MySQL. A aplicação consistirá somente de uma página com dois painéis: no painel
 posicionado a esquerda, o usuário poderá cadastrar novos comentários. No painel da direita todos os comentários cadastrados devem ser listados, com um botão ao lado de cada um que ao ser clicado executa um áudio de leitura do comentário utilizando a API Text to Speech do IBM Watson.
 
-![enter image description here](https://lh3.googleusercontent.com/9bP-PZSMAUjs7nFrsCPw57ViPgs3acvBAeRrnL1-3SGkua5kBjQZVXKy-daYQw6ft4ubQbA_2a9_vQoTxWdqhPkpMwX1OQ-MZeJVKQtGxsmbAJbJwIrsWWFoIOFiPT5vJrWY6qoB2GPRJgyInyxIjREJsYe1rrXD04VvYrXyPBRLiNlPiOVawn9qwAEDnUJclhj3sFlR5lBxQMDXwN-358TWbkevvwRdTRJsMyJpo6PlSVAgWYv__KYd2PymeRDz7b8idKe4OHjU3WGUyG-MteGHbzc9WWGHh7hijjhMVwuH2CTUh-UXGfR9f2Px1XAZYOStSU52GWKmKNzhpctBpCjv63xFNxqYsuZvQoP5ceZ-QYtNuT6eB-5SzaM8ndS6DHeBVcxSzvo2rRDzrl_eyEfn3U2IxtCg-_w9BDWrATrQxTqW1l3teru-UtsUuA-8tJkrDFfimyKrCWgj1IuhS_jA3fxTzZwKEQwUdt8LxSCcHBZuyf00qI7Y9QbmyUEZwxIb7jmPz77IESoQxXlLhifJJvP6ByVUcoe-Q_J4T405TTNpzDgm0ggU33mPfZSf9Gggl6dlAu7eeiMTyKthjQWsHLC_w--0pnmjnlWIiP61eLOiY2fWjjp7Rq28rYTvCtl_z7a2SCdgk7KmY2Rf2Ie-2fmQ_STBWMaJ1BV530mqZC9UzYOF-4AjaQJGJCo5_bX-NobFnQ38wDEgYDDAYlI=w1085-h489-no?authuser=0)
+![A imagem exibe a versão final do projeto contendo duas seções: uma seção para o preenchimento e envio do comentário, e uma seção para a visualização de comentários. Cada comentário contêm um botão que ao ser clicado executa um áudio de leitura do comentário](https://lh3.googleusercontent.com/9bP-PZSMAUjs7nFrsCPw57ViPgs3acvBAeRrnL1-3SGkua5kBjQZVXKy-daYQw6ft4ubQbA_2a9_vQoTxWdqhPkpMwX1OQ-MZeJVKQtGxsmbAJbJwIrsWWFoIOFiPT5vJrWY6qoB2GPRJgyInyxIjREJsYe1rrXD04VvYrXyPBRLiNlPiOVawn9qwAEDnUJclhj3sFlR5lBxQMDXwN-358TWbkevvwRdTRJsMyJpo6PlSVAgWYv__KYd2PymeRDz7b8idKe4OHjU3WGUyG-MteGHbzc9WWGHh7hijjhMVwuH2CTUh-UXGfR9f2Px1XAZYOStSU52GWKmKNzhpctBpCjv63xFNxqYsuZvQoP5ceZ-QYtNuT6eB-5SzaM8ndS6DHeBVcxSzvo2rRDzrl_eyEfn3U2IxtCg-_w9BDWrATrQxTqW1l3teru-UtsUuA-8tJkrDFfimyKrCWgj1IuhS_jA3fxTzZwKEQwUdt8LxSCcHBZuyf00qI7Y9QbmyUEZwxIb7jmPz77IESoQxXlLhifJJvP6ByVUcoe-Q_J4T405TTNpzDgm0ggU33mPfZSf9Gggl6dlAu7eeiMTyKthjQWsHLC_w--0pnmjnlWIiP61eLOiY2fWjjp7Rq28rYTvCtl_z7a2SCdgk7KmY2Rf2Ie-2fmQ_STBWMaJ1BV530mqZC9UzYOF-4AjaQJGJCo5_bX-NobFnQ38wDEgYDDAYlI=w1085-h489-no)
 <p align="center"> Figura 1. Screenshot da versão final do projeto</p>
 
 <h3 id="requirements">2. Pré-requisitos</h3>
@@ -35,23 +35,22 @@ Speech</a> contendo API_KEY e URL.</li>
 <h3 id="directories">3. Estrutura de Diretórios</h3>
 Este projeto utiliza o padrão de projeto de software MVC. Aqui se encontra uma breve visão geral da estrutura de diretórios do projeto:
 
-├───app (código central da aplicação)
-│   ├───config (configurações da aplicação)
-│   ├───controllers (lógicas da aplicação)
-│   ├───helpers (funções auxiliares)
-│   ├───models (banco de dados e tabelas)
-│   ├───routes (gerenciador de rotas HTTP)
-│   ├───views (lógicas de apresentação)
-│   │   └───components (modularização de páginas)
-│   └───watson-api (provê acesso a API IBM-TTS)
-├───node_modules (dependências da aplicação)
-└───public (diretório de arquivos públicos)
-	    ├───css (arquivos estilização)
-	    ├───js (arquivos javascript)
-	    │   └───modules (modularização de códigos)
-	    └───sounds (diretório de saída de arquivos de áudio)
+├───app (código central da aplicação)<br>
+│   ├───config (configurações da aplicação)<br>
+│   ├───controllers (lógicas da aplicação)<br>
+│   ├───helpers (funções auxiliares)<br>
+│   ├───models (banco de dados e tabelas)<br>
+│   ├───routes (gerenciador de rotas HTTP)<br>
+│   ├───views (lógicas de apresentação)<br>
+│   │   └───components (modularização de páginas)<br>
+│   └───watson-api (provê acesso a API IBM-TTS)<br>
+├───node_modules (dependências da aplicação)<br>
+└───public (diretório de arquivos públicos)<br>
+	    ├───css (arquivos de estilização)<br>
+	    ├───js (arquivos javascript)<br>
+	    │   └───modules (modularização de códigos)<br>
+	    └───sounds (diretório de saída de arquivos de áudio)<br>
     
-
 <h3 id="execute">4. Como Executar</h3>
 Para executar este projeto, siga os passos descritos abaixo:
 <ol>
