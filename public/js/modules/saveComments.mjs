@@ -4,6 +4,7 @@ import {Feedback} from './feedbackManager.mjs';
 
 const ID_COMMENT_FORM    = "form-comment";
 const ID_COMMENT_FIELD   = "field-comment";
+const ID_BTN_SUBMIT      = "btn-submit";
 const MAX_COMMENT_LENGTH = 500;
 
 function watchSubmits() {
@@ -15,15 +16,18 @@ export default watchSubmits;
 function _send(event) {
 	event.preventDefault();
 	Feedback.hidden();
+	Feedback.disable_btn(ID_BTN_SUBMIT);
 
 	const field = document.getElementById(ID_COMMENT_FIELD);
 	const comment = field.value;
 
 	const checker = _validate(comment);
-	if(checker.valid)
+	if(checker.valid) {
 		_save(comment, event.target);
-	else
+	} else{
 		Feedback.show(checker.message, checker.flag);
+		Feedback.enable_btn(ID_BTN_SUBMIT);
+	}
 }
 
 function _save(comment, form) {
@@ -34,8 +38,10 @@ function _save(comment, form) {
 	    	insertNewerCommentDOM(register.comment);
 	    	Feedback.success("Comentário cadastrado com sucesso!");
 	    	form.reset();
+	    	Feedback.enable_btn(ID_BTN_SUBMIT);
 		} else {
 			Feedback.error("Oops! Houve algum problema no servidor ao tentar salvar seu comentário...");
+			Feedback.enable_btn(ID_BTN_SUBMIT);
 		}
 	});
 }

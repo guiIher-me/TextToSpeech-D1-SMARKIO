@@ -111,12 +111,12 @@ textarea {
 	cursor: pointer;
 }
 
-.btn:hover {
+.btn:enabled:hover {
 	background-color: var(--primary-dark);
 	transition: background-color .2s ease-in;
 }
 
-.btn:active {
+.btn:enabled:active {
 	transform: translateY(1px);
 }
 
@@ -194,24 +194,28 @@ textarea {
 .alert.alert-info {
 	padding: 15px 20px;
 	background-color: var(--info);
-	color:  var(--on-info);
+	color: var(--on-info);
 }
 
 .alert.alert-error {
 	background-color: var(--error);
-	color:  var(--on-error);
+	color: var(--on-error);
 }
 
 .alert.alert-warning {
 	background-color: var(--warning);
-	color:  var(--on-warning);
+	color: var(--on-warning);
 }
 
 .alert.alert-success {
 	background-color: var(--success);
-	color:  var(--on-success);
+	color: var(--on-success);
 }
 
+/* FEEDBACKS - BUTTONS */
+.btn:disabled {
+	opacity: 0.5;
+}
 
 /* Error 404 */
 #error-404 {

@@ -8,7 +8,7 @@ export const Feedback = {
 	SUCCESS : 'success',
 	INFO    : 'info',
 
-	//feedback functions
+	//feedback messages
 	error   : (message) => {Feedback.show(message, Feedback.ERROR)},
 	warning : (message) => {Feedback.show(message, Feedback.WARNING)},
 	success : (message) => {Feedback.show(message, Feedback.SUCCESS)},
@@ -20,5 +20,16 @@ export const Feedback = {
 	hidden: () => {
 		feedbackDOM.className = '';
 		feedbackDOM.innerHTML = '';
+	},
+
+	//feedback buttons
+	disable_btn: (btn_id) => {
+		const btn = document.getElementById(btn_id);
+		btn.disabled = true;
+	},
+
+	enable_btn: (btn_id) => {
+		const btn = document.getElementById(btn_id);
+		btn.disabled = false;
 	}
 }
