@@ -7,16 +7,6 @@ module.exports = {
 		res.render('index');
 	},
 
-	async getSound(req, res) {
-		const text = req.params.text;
-
-		
-
-        console.log("RESPOSTA:");
-		console.log(response);
-		res.send(response);
-	},
-
 	async getAll(req, res) {
 		let comments;
 		try {
