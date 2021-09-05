@@ -8,38 +8,26 @@
 	<title>Teste IBM Watson - D1 Smarkio | Guilherme Cardoso</title>
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="module" src="/js/modules/requisitions.mjs"></script>
+	<script type="module" src="/js/modules/feedbackManager.mjs"></script>
 	<script type="module" src="/js/modules/loadComments.mjs"></script>
 	<script type="module" src="/js/modules/saveComments.mjs"></script>
 	<script type="module" src="/js/main.js"></script>
 </head>
 
 <body>
-
 	<main class="container">
 		<section class="section--form-comment">
 			<form id="form-comment">
 				<label for="field-comment" class="form-label"><h2 class="section-title">Comentário</h2></label>
 				<textarea id="field-comment" class="form-control" maxlength="500"></textarea>
 				<input type="submit" value="Cadastrar" class="btn btn-block">
+				<div id="feedback-box"></div>
 			</form>
 		</section>
 
 		<section class="section--list-comments">
 			<h2 class="section-title">Comentários</h2>
-
-			<div id="list-comments">
- 				<!--  
- 				<div class="comment-item">
- 					<div class="comment-box-text">
- 						<span class="comment-text"></span>
- 					</div>
-
- 					<div class="comment-box-button">
- 						<button type="button" class="btn comment-listen">Ouvir</button>
- 					</div>
- 				</div>-->
- 				
-			</div>
+			<div id="list-comments"> </div>
 		</section>
 	</main>
 </body>

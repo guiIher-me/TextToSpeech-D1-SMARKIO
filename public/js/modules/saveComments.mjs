@@ -1,5 +1,6 @@
 import {Http} from './requisitions.mjs';
 import {insertNewerCommentDOM}  from './loadComments.mjs';
+import {Feedback} from './feedbackManager.mjs';
 
 const ID_COMMENT_FORM    = "form-comment";
 const ID_COMMENT_FIELD   = "field-comment";
@@ -20,8 +21,9 @@ function _send(event) {
 	const checker = _validate(comment);
 	if(checker.valid) {
 		_save(comment);
+		Feedback.success("Comentário cadastrado com sucesso!");
 	} else {
-		console.log(checker.message);
+		Feedback.show(checker.message, checker.flag);
 	}
 }
 
@@ -32,7 +34,7 @@ function _save(comment) {
 	    	const register = JSON.parse(res.response).data;
 	    	insertNewerCommentDOM(register.comment);
 		} else {
-			console.log("Erro ao salvar!");
+			Feedback.error("Oops! Houve algum problema no servidor ao tentar salvar seu comentário...");
 		}
 	});
 }
@@ -41,21 +43,21 @@ function _validate(comment) {
 	let checker = {
 		valid: false,
 		message: "",
-		type: ""
+		flag: ""
 	};
 
 	if(comment == null) {
 		checker.message = "Erro ao cadastrar comentário";
-		checker.type = "error";
+		checker.flag    = Feedback.ERROR;
 	} else if(comment.length == 0) {
 		checker.message = "Escreva um comentário!";
-		checker.type = "alert";
+		checker.flag    = Feedback.ERROR;
 	} else if(comment.length > MAX_COMMENT_LENGTH) {
 		checker.message = "O comentário não deve exceder 500 caracteres!";
-		checker.type = "error";
+		checker.flag    = Feedback.ERROR;
 	} else {
 		checker.valid = true;
-		checker.type = "success";
+		checker.flag  = Feedback.SUCCESS;
 	}
 
 	return checker;

@@ -9,12 +9,27 @@
 
 /* VARS */
 :root {
+	/* Theme  */
   --primary: #007bff;
   --primary-dark: #0062cc;
   --on-primary: #ffffff;
 
+  /* Comments */
   --newer-comment-bg: #caf7d6;
   --newer-comment-tag: #6dde8b;
+
+  /* Feedbacks */
+  --error: #f8d7da;
+  --on-error: #721c24;
+
+  --warning: #fff3cd;
+  --on-warning: #856404;
+
+  --success: #d4edda;
+  --on-success: #155724;
+
+  --info: #cce5ff;
+  --on-info: #004085;
 }
 
 
@@ -82,13 +97,14 @@ textarea {
 	resize: none;
 	width:  100%;
 	min-height:  150px;
+	box-sizing: border-box;
 }
 
 .btn {
 	border: 1px solid rgba(0,0,0,0.2);
 	text-align: center;
 	padding: 6px 20px;
-	margin: 5px;
+	margin: 10px 0;
 	border-radius: .2rem;
 	background-color: var(--primary);
 	color: var(--on-primary);
@@ -106,7 +122,7 @@ textarea {
 
 .btn-block {
 	display: block;
-    width: 100%;
+  width: 100%;
 }
 
 
@@ -166,4 +182,30 @@ textarea {
 
 .comment-box-text {
 	width:  80%;
+}
+
+
+/* FEEDBACK - ALERTS */
+.alert {
+	padding: 15px 20px;
+}
+
+.alert.alert-error {
+	background-color: var(--error);
+	color:  var(--on-error);
+}
+
+.alert.alert-warning {
+	background-color: var(--warning);
+	color:  var(--on-warning);
+}
+
+.alert.alert-success {
+	background-color: var(--success);
+	color:  var(--on-success);
+}
+
+.alert.alert-info {
+	background-color: var(--info);
+	color:  var(--on-info);
 }
