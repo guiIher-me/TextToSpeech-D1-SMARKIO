@@ -20,10 +20,11 @@ module.exports = {
 
 	async save(req, res) {
 		const comment_text = req.body.data;
+		const comment_hash = helper.hashCode(comment_text);
 
-		if( !helper.soundExists(comment_text) ) {
+		if( !helper.soundExists(comment_hash) ) {
 			try {
-	            response = await TTS.getAudio(comment_text);
+	            response = await TTS.getAudio(comment_text, comment_hash);
 	        } catch (error) {
 	            console.log(error);
 	        }
@@ -31,7 +32,7 @@ module.exports = {
 		
 		let ret;
 		try {
-			ret = await DB.Comments.create({comment: comment_text});
+			ret = await DB.Comments.create({comment: comment_text, hash:comment_hash});
 		} catch(error) {
 			console.log(error);
 		}

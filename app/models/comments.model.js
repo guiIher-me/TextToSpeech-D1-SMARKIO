@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
 		comment: {
 			type: DataTypes.STRING,
 			allowNull: false,
+		},
+		hash: {
+			type: DataTypes.STRING,
+			allowNull: false,
 		}
 	}, {
     	timestamps: true,

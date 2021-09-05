@@ -5,7 +5,7 @@ import {Feedback} from './feedbackManager.mjs';
 const ID_COMMENT_FORM    = "form-comment";
 const ID_COMMENT_FIELD   = "field-comment";
 const ID_BTN_SUBMIT      = "btn-submit";
-const MAX_COMMENT_LENGTH = 500;
+const MAX_COMMENT_LENGTH = 255;
 
 function watchSubmits() {
 	const submit = document.getElementById(ID_COMMENT_FORM);
@@ -35,7 +35,7 @@ function _save(comment, form) {
 	req.post(document.URL + "comments", {data: comment}, function(res) {
 	    if (res.status == 200) {
 	    	const register = JSON.parse(res.response).data;
-	    	insertNewerCommentDOM(register.comment);
+	    	insertNewerCommentDOM(register.comment, register.hash);
 	    	Feedback.success("Comentário cadastrado com sucesso!");
 	    	form.reset();
 	    	Feedback.enable_btn(ID_BTN_SUBMIT);

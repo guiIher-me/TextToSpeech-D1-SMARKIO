@@ -4,7 +4,7 @@ const path = require('path');
 const TextToSpeechV1 = require('ibm-watson/text-to-speech/v1');
 
 module.exports = {
-    async getAudio(text) {
+    async getAudio(text, hash_text) {
     	const cred = {
 			"apikey": process.env.IBM_TTS_APIKEY,
 			"url": process.env.IBM_TTS_URL
@@ -31,7 +31,7 @@ module.exports = {
 				return textToSpeech.repairWavHeaderStream(response.result);
 			})
 			.then(buffer => {
-				fs.writeFileSync(path.join(__dirname, '/../../public/sounds/') + text + '.wav', buffer);
+				fs.writeFileSync(path.join(__dirname, '/../../public/sounds/') + hash_text + '.wav', buffer);
 				return Promise.resolve();
 			})
 			.catch(err => {

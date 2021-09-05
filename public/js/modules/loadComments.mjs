@@ -14,8 +14,8 @@ export async function loadComments() {
 	});
 }
 
-export function insertNewerCommentDOM(comment) {
-	const str_dom = _getCommentAsDOM(comment, true);
+export function insertNewerCommentDOM(comment, comment_hash) {
+	const str_dom = _getCommentAsDOM(comment, comment_hash, true);
 	const parent  = document.getElementById(ID_COMMENTS_PARENT);
 	parent.innerHTML = str_dom + parent.innerHTML;
 }
@@ -29,13 +29,13 @@ function _insertCommentsInDOM(comments) {
 function _getCommentsAsDOM(comments) {
 	let str_dom = "";
 	for(let i=0; i<comments.length; i++)
-		str_dom += _getCommentAsDOM(comments[i].comment);
+		str_dom += _getCommentAsDOM(comments[i].comment, comments[i].hash);
 
 	return str_dom;
 }
 
-function _getCommentAsDOM(comment, newer = false) {
-	const url_sound = document.URL + `sounds/${comment}.wav`;
+function _getCommentAsDOM(comment, comment_hash, newer = false) {
+	const url_sound = document.URL + `sounds/${comment_hash}.wav`;
 
 	const commentDOM=`<div class="comment-item" data-newer="${newer}">
 	 					<div class="comment-box-text">
