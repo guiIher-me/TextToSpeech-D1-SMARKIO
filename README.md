@@ -71,7 +71,7 @@ SERVER_PORT=3000
 #Selecione o host, usuário, senha e nome da base de dados do projeto
 DB_HOST = localhost
 DB_USER = your_user
-DB_PASS = yout_pass
+DB_PASS = your_pass
 DB_DATABASE = your_database
 
 #Modifique os parâmetros de acesso da API do IBM - Text to Speech
