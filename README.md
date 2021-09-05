@@ -54,7 +54,7 @@ Este projeto utiliza o padrão de projeto de software MVC. Aqui se encontra uma 
 <h3 id="execute">4. Como Executar</h3>
 Para executar este projeto, siga os passos descritos abaixo:
 <ol>
-	<li>Faça o  download/clone deste projeto para sua máquina;</li>
+	<li>Faça o [download](https://github.com/guiIher-me/TextToSpeech-D1-SMARKIO/archive/refs/heads/main.zip) ou clone este projeto para sua máquina;</li>
 	<li>Acesse o diretório raiz/principal do projeto usando um terminal;</li>
 	<li><a target="_blank" href="https://docs.npmjs.com/cli/v7/commands/npm-install">Instale as dependências</a> do projeto, utilizando o gerenciador de pacotes npm, via linha de comando, executando: 
 	
