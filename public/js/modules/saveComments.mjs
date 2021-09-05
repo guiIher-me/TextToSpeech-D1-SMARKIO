@@ -6,11 +6,11 @@ const ID_COMMENT_FORM    = "form-comment";
 const ID_COMMENT_FIELD   = "field-comment";
 const MAX_COMMENT_LENGTH = 500;
 
-function watch() {
+function watchSubmits() {
 	const submit = document.getElementById(ID_COMMENT_FORM);
 	submit.addEventListener("submit", (event) => _send(event), false);
 }
-export default watch;
+export default watchSubmits;
 
 function _send(event) {
 	event.preventDefault();
@@ -62,4 +62,3 @@ function _validate(comment) {
 
 	return checker;
 }
-

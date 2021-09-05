@@ -176,12 +176,16 @@ textarea {
 }
 
 .comment-box-text,
-.comment-box-button {
+.comment-box-listen {
 	display: table-cell;
 }
 
 .comment-box-text {
 	width:  80%;
+}
+
+.comment-box-listen audio {
+	display: none;
 }
 
 

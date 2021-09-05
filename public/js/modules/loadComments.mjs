@@ -1,14 +1,15 @@
 import {Http} from './requisitions.mjs';
+import {Feedback} from './FeedbackManager.mjs';
 
 const ID_COMMENTS_PARENT = 'list-comments';
 
-export function load() {
+export async function loadComments() {
 	var req = new Http();
 	req.get(document.URL + "comments", function(res) {
 	    if (res.status == 200) {
 	    	_insertCommentsInDOM(res.response);
 		} else {
-			console.log("Erro ao pegar os dados json via get!");
+			Feedback.error("Erro ao carregar comentários!");
 		}
 	});
 }
@@ -34,15 +35,18 @@ function _getCommentsAsDOM(comments) {
 }
 
 function _getCommentAsDOM(comment, newer = false) {
-	const commentDOM=`<div class="comment-item" data-newer="${newer}">
- 					<div class="comment-box-text">
- 						<span class="comment-text">${comment}</span>
- 					</div>
+	const url_sound = document.URL + '/sounds/roar.wav';
 
- 					<div class="comment-box-button">
- 						<button type="button" class="btn comment-listen">Ouvir</button>
- 					</div>
- 				</div>`;
+	const commentDOM=`<div class="comment-item" data-newer="${newer}">
+	 					<div class="comment-box-text">
+	 						<span class="comment-text">${comment}</span>
+	 					</div>
+
+	 					<div class="comment-box-listen">
+	 						<button type="button" class="btn comment-listen" onclick="play(this)">Ouvir</button>
+	 						<audio id='${url_sound}' src="${url_sound}"></audio>
+	 					</div>
+	 				  </div>`;
 
  	return commentDOM;
 }
