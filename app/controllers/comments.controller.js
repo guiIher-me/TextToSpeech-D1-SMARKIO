@@ -9,7 +9,7 @@ module.exports = {
 	async getAll(req, res) {
 		let comments;
 		try {
-			comments = await DB.Comments.findAll();
+			comments = await DB.Comments.findAll({order: [['createdAt', 'DESC']]});
 		} catch {
 			console.log("Erro ao consultar dados");
 		}

@@ -39,10 +39,37 @@ body {
 	font-family: Roboto;
 }
 
-
 .section-title {
 	font-weight: bold;
 	margin: 10px 0;
+}
+
+
+/* GRID */
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	width: 100%;
+	padding:  20px;
+	box-sizing: border-box;
+}
+
+.section--form-comment,
+.section--list-comments {
+	display: block;
+	width: 50%;
+}
+.section--list-comments {
+	max-height: 100%;
+	overflow-y: scroll;
+}
+
+@media only screen and (max-width: 768px) {
+	.section--form-comment,
+	.section--form-comment {
+		width: 100%;
+	}
 }
 
 
@@ -80,34 +107,6 @@ textarea {
 .btn-block {
 	display: block;
     width: 100%;
-}
-
-
-/* GRID */
-.container {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	width: 100%;
-	padding:  20px;
-	box-sizing: border-box;
-}
-
-.section--form-comment,
-.section--list-comments {
-	display: block;
-	width: 50%;
-}
-.section--list-comments {
-	max-height: 100%;
-	overflow-y: scroll;
-}
-
-@media only screen and (max-width: 768px) {
-	.section--form-comment,
-	.section--form-comment {
-		width: 100%;
-	}
 }
 
 
