@@ -34,9 +34,9 @@ function _getCommentsAsDOM(comments) {
 }
 
 function _getCommentAsDOM(comment, newer = false) {
-	const commentDOM=`<div class="comment-item">
+	const commentDOM=`<div class="comment-item" data-newer="${newer}">
  					<div class="comment-box-text">
- 						<span class="comment-text" data-newer="${newer}">${comment}</span>
+ 						<span class="comment-text">${comment}</span>
  					</div>
 
  					<div class="comment-box-button">
