@@ -186,8 +186,11 @@ textarea {
 
 
 /* FEEDBACK - ALERTS */
-.alert {
+.alert,
+.alert.alert-info {
 	padding: 15px 20px;
+	background-color: var(--info);
+	color:  var(--on-info);
 }
 
 .alert.alert-error {
@@ -203,11 +206,6 @@ textarea {
 .alert.alert-success {
 	background-color: var(--success);
 	color:  var(--on-success);
-}
-
-.alert.alert-info {
-	background-color: var(--info);
-	color:  var(--on-info);
 }
 
 
