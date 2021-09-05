@@ -190,16 +190,6 @@ textarea {
 	display: none;
 }
 
-.btn.comment-listen {
-	height: fit-content;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
-}
-
 
 /* FEEDBACK - ALERTS */
 .alert,
