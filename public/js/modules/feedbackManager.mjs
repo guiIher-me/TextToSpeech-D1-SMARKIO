@@ -1,3 +1,6 @@
+const ID_FEEDBACK = 'feedback-box';
+const feedbackDOM = document.getElementById(ID_FEEDBACK);
+
 export const Feedback = {
 	//constant flags
 	ERROR   : 'error',
@@ -11,9 +14,11 @@ export const Feedback = {
 	success : (message) => {Feedback.show(message, Feedback.SUCCESS)},
 	info    : (message) => {Feedback.show(message, Feedback.INFO)},
 	show    : (message, flag) => {
-		const ID_FEEDBACK = 'feedback-box';
-		const feedbackDOM = document.getElementById(ID_FEEDBACK);
 		feedbackDOM.className = 'alert alert-' + flag;
 		feedbackDOM.innerHTML = message;
+	},
+	hidden: () => {
+		feedbackDOM.className = '';
+		feedbackDOM.innerHTML = '';
 	}
 }

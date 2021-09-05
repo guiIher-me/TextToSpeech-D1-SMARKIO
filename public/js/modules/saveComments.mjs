@@ -14,6 +14,7 @@ export default watchSubmits;
 
 function _send(event) {
 	event.preventDefault();
+	Feedback.hidden();
 
 	const field = document.getElementById(ID_COMMENT_FIELD);
 	const comment = field.value;

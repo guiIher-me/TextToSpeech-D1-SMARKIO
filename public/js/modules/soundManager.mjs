@@ -1,8 +1,17 @@
+import {Feedback} from './FeedbackManager.mjs';
 
 async function play(btn) {
 	const audio = btn.nextElementSibling;
 	await pauseAll();
-	audio.play();
+	
+	const promise = audio.play();
+	if (promise !== undefined) {
+	    promise.then(_ => {
+	    	Feedback.hidden();
+	    }).catch(error => {
+	        Feedback.error("Não foi possível reproduzir este áudio");
+	    });
+	}
 }
 export default play;
 
