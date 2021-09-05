@@ -148,7 +148,7 @@ textarea {
 	width: 100%;
 	padding: 5px 10px 5px 30px;
 	box-sizing: border-box;
-	margin: 5px 0;
+	margin: 15px 0;
 }
 
 .comment-item[data-newer='true'] {
@@ -168,16 +168,18 @@ textarea {
 
 .comment-box-text {
 	padding: 0 10px;
+	word-break: break-word;
 }
 
 .comment-box-text span.comment-text {
 	width: 100%;
-	word-wrap:break-word;
+	line-height: 20px;
 }
 
 .comment-box-text,
 .comment-box-listen {
 	display: table-cell;
+	position: relative;
 }
 
 .comment-box-text {
@@ -186,6 +188,16 @@ textarea {
 
 .comment-box-listen audio {
 	display: none;
+}
+
+.btn.comment-listen {
+	height: fit-content;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
 }
 
 
