@@ -1,4 +1,5 @@
 import {Http} from './requisitions.mjs';
+import {insertNewerCommentDOM}  from './loadComments.mjs';
 
 const ID_COMMENT_FORM    = "form-comment";
 const ID_COMMENT_FIELD   = "field-comment";
@@ -28,7 +29,8 @@ function _save(comment) {
 	var req = new Http();
 	req.post(document.URL + "comments", {data: comment}, function(res) {
 	    if (res.status == 200) {
-	    	console.log("Sucesso ao salvar!");
+	    	const register = JSON.parse(res.response).data;
+	    	insertNewerCommentDOM(register.comment);
 		} else {
 			console.log("Erro ao salvar!");
 		}

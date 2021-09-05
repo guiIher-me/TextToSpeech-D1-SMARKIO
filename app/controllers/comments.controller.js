@@ -27,10 +27,7 @@ module.exports = {
 			console.log(error);
 		}
 
-		console.log(ret);
-		return res.status(200).json({
-            comment: ret.dataValues.text,
-        })
+		return res.status(200).json({data: ret.dataValues});
 	}
 
 }
