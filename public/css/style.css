@@ -98,7 +98,7 @@ textarea {
 
 
 /* COMMENT FORM */
-form.form-comment {
+#form-comment {
 	max-width: 400px;
 	left:  0;
 	right: 0;

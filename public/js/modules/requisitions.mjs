@@ -1,20 +1,24 @@
 export const Http = function() {
-	this.requisition = function(url, callback, req_method) {
+	this.post = function(url, json_data, callback) {
 		var req = new XMLHttpRequest();
-        req.onreadystatechange = function() { 
-            if (req.readyState == 4)
+        req.open("POST", url);
+        req.setRequestHeader("Content-Type", "application/json");
+        req.onreadystatechange = function() {
+            if (this.readyState === XMLHttpRequest.DONE) {
                 callback(req);
+            }
         }
-        req.responseType = 'json';
-        req.open(req_method, url, true);            
-        req.send(null);
-	}
-
-	this.post = function(url, callback) {
-		this.requisition(url, callback, "POST");
+        req.send(JSON.stringify(json_data));
 	}
 
     this.get = function(url, callback) {
-       this.requisition(url, callback, "GET");
+        var req = new XMLHttpRequest();
+        req.open("GET", url, true);
+        req.responseType = 'json';
+        req.onreadystatechange = function() {
+            if (this.readyState == XMLHttpRequest.DONE)
+                callback(req);
+        }
+        req.send(null);
     }
 }

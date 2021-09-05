@@ -15,6 +15,22 @@ module.exports = {
 		}
 
 		return res.status(200).json(comments);
+	},
+
+	async save(req, res) {
+		const comment_text = req.body.data;
+		
+		let ret;
+		try {
+			ret = await DB.Comments.create({comment: comment_text});
+		} catch(error) {
+			console.log(error);
+		}
+
+		console.log(ret);
+		return res.status(200).json({
+            comment: ret.dataValues.text,
+        })
 	}
 
 }

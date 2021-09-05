@@ -17,11 +17,10 @@ export default load;
 function _insertCommentsDOM(comments) {
 	const str_dom  = _getCommentsDOM(comments);
 	const parent   = document.getElementById(ID_COMMENTS_PARENT);
-	parent.innerHTML += str_dom;
+	parent.innerHTML = str_dom;
 }
 
 function _getCommentsDOM(comments) {
-	console.log(comments);
 	let str_dom = "";
 	for(let i=0; i<comments.length; i++)
 		str_dom += _getCommentDOM(comments[i].comment);
