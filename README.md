@@ -56,7 +56,7 @@ Para executar este projeto, siga os passos descritos abaixo:
 <ol>
 	<li>Faça o <a href="https://github.com/guiIher-me/TextToSpeech-D1-SMARKIO/archive/refs/heads/main.zip">download</a> e desconpacte a pasta; ou clone este projeto para sua máquina;</li>
 	<li>Acesse o diretório raiz/principal do projeto usando um terminal;</li>
-	<li><a target="_blank" href="https://docs.npmjs.com/cli/v7/commands/npm-install">Instale as dependências</a> do projeto, utilizando o gerenciador de pacotes npm, via linha de comando, executando: 
+	<li><a target="_blank" href="https://docs.npmjs.com/cli/v7/commands/npm-install">Instale as dependências</a> do projeto, utilizando o gerenciador de pacotes npm, via linha de comando, executando (a instalação de dependências pode demorar alguns minutos...): 
 	
 ```
 npm install
