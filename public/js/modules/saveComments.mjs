@@ -19,20 +19,20 @@ function _send(event) {
 	const comment = field.value;
 
 	const checker = _validate(comment);
-	if(checker.valid) {
-		_save(comment);
-		Feedback.success("Comentário cadastrado com sucesso!");
-	} else {
+	if(checker.valid)
+		_save(comment, event.target);
+	else
 		Feedback.show(checker.message, checker.flag);
-	}
 }
 
-function _save(comment) {
+function _save(comment, form) {
 	var req = new Http();
 	req.post(document.URL + "comments", {data: comment}, function(res) {
 	    if (res.status == 200) {
 	    	const register = JSON.parse(res.response).data;
 	    	insertNewerCommentDOM(register.comment);
+	    	Feedback.success("Comentário cadastrado com sucesso!");
+	    	form.reset();
 		} else {
 			Feedback.error("Oops! Houve algum problema no servidor ao tentar salvar seu comentário...");
 		}

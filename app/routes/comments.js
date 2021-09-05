@@ -5,4 +5,8 @@ module.exports = function(app) {
 	app.get('/', Comments.home);
 	app.get('/comments', Comments.getAll);
 	app.post('/comments', Comments.save);
+
+	app.use(function(req, res, next) {
+		res.status(404).render('404');
+	});
 };

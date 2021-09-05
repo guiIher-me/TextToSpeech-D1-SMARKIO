@@ -209,3 +209,19 @@ textarea {
 	background-color: var(--info);
 	color:  var(--on-info);
 }
+
+
+/* Error 404 */
+#error-404 {
+	margin: auto;
+	font-size: 60px;
+	color: #757575;
+}
+
+#error-404:before {
+	position: absolute;
+	content: ":S";
+	color: rgba(0,0,0,0.05);
+	font-size: 500px;
+	top: 30px;
+}
