@@ -35,7 +35,7 @@ function _getCommentsAsDOM(comments) {
 }
 
 function _getCommentAsDOM(comment, newer = false) {
-	const url_sound = document.URL + '/sounds/roar.wav';
+	const url_sound = document.URL + `sounds/${comment}.wav`;
 
 	const commentDOM=`<div class="comment-item" data-newer="${newer}">
 	 					<div class="comment-box-text">

@@ -5,3 +5,6 @@ package-lock.json
 # Dotenv
 .env
 .env.test
+
+#sounds
+public/sounds/

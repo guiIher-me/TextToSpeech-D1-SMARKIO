@@ -1,9 +1,20 @@
 const DB = require('../models/connection');
+const TTS = require('../watson-api/index');
+const helper = require('../helpers/HelperComments');
 
 module.exports = {
-
 	async home(req, res) {
 		res.render('index');
+	},
+
+	async getSound(req, res) {
+		const text = req.params.text;
+
+		
+
+        console.log("RESPOSTA:");
+		console.log(response);
+		res.send(response);
 	},
 
 	async getAll(req, res) {
@@ -19,6 +30,14 @@ module.exports = {
 
 	async save(req, res) {
 		const comment_text = req.body.data;
+
+		if( !helper.soundExists(comment_text) ) {
+			try {
+	            response = await TTS.getAudio(comment_text);
+	        } catch (error) {
+	            console.log(error);
+	        }
+		}
 		
 		let ret;
 		try {
