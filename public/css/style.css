@@ -27,11 +27,18 @@ html, body, div, section, input, span, button, h1, h2, h3, h4, h5, h6 {
 	vertical-align: baseline;
 }
 
+html, body {
+	height: 100%;
+	overflow:  hidden;
+}
+
 body {
+	display: flex;
 	background-color: #f5f5f5;
 	line-height: 1;
 	font-family: Roboto;
 }
+
 
 .section-title {
 	font-weight: bold;
@@ -90,6 +97,10 @@ textarea {
 .section--list-comments {
 	display: block;
 	width: 50%;
+}
+.section--list-comments {
+	max-height: 100%;
+	overflow-y: scroll;
 }
 
 @media only screen and (max-width: 768px) {
