@@ -19,8 +19,8 @@ const DB = {};
 //Models
 DB.Comments = require("../models/comments.model.js")(sequelize, Sequelize.DataTypes);
 
-//cria a tabela, apaga antes se necessário:
-//DB.Comments.sync({force: true});
+//cria a tabela, apaga antes se true:
+DB.Comments.sync({force: false});
 
 DB.Sequelize = Sequelize;
 DB.sequelize = sequelize;
