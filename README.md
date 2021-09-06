@@ -75,6 +75,7 @@ DB_PASS = your_pass
 DB_DATABASE = your_database
 
 #Modifique os parâmetros de acesso da API do IBM - Text to Speech
+#Os valores abaixo são fictícios
 IBM_TTS_APIKEY = r8s9qrz9452Ra-SDs8aRQC-sda454asd2w5f4ds5454d
 IBM_TTS_URL = https://api.au-syd.text-to-speech.watson.cloud.ibm.com/instances/7454u787-c874-4ea8-a8q8-454y57878721
 ```
