@@ -83,8 +83,10 @@ IBM_TTS_URL = https://api.au-syd.text-to-speech.watson.cloud.ibm.com/instances/7
 <li>Agora, para executar o projeto, acesse a linha de comando no diretório raiz/principal do projeto e execute o comando:</li>
 
 ```
-node app.js
+node .
 ```
+<li>Acesse, via navegador, o localhost na porta anteriormente especificada, como no exemplo abaixo:</li>
+<a target="_blank" href="http://localhost:3000">http://localhost:3000</a>
 
 <li>Enjoy!</li>
 </ol>
