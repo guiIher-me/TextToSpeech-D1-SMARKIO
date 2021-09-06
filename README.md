@@ -3,7 +3,7 @@
 
 :books: Teste prático para a vaga de "**Desenvolvimento de Assistentes Virtuais**" na empresa **D1 Smarkio** utilizando Node.js, MySQL e a API Text to Speech do IBM Watson.
 
-<h3 id="content">Tabela de Conteúdos</h3>
+<h3 id="content">Sumário</h3>
 <ul>
 	<li><a href="#objetive">1. Objetivo</a></li>
 	<li><a href="#requirements">2. Pré-requisitos</a></li>
