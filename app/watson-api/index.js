@@ -35,7 +35,7 @@ module.exports = {
 				return Promise.resolve();
 			})
 			.catch(err => {
-				console.log('error:', err);
+				console.log('Error: Não foi possível gerar o arquivo de audio. Verifique as credenciais e tente novamente!');
 			});
 
 		return null;
